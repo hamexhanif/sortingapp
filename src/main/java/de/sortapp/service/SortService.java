@@ -1,5 +1,6 @@
 package de.sortapp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -24,6 +25,36 @@ public class SortService {
             if(!swapped) break;
         }
         return input;
+    }
+
+    public List<Double> mergeSort(List<Double> input) {
+        if (input.size() <= 1) {
+            return input;
+        }
+
+        int mid = input.size() / 2;
+        List<Double> left = mergeSort(input.subList(0, mid));
+        List<Double> right = mergeSort(input.subList(mid, input.size()));
+
+        return merge(left, right);
+    }
+
+    private List<Double> merge(List<Double> left, List<Double> right) {
+        List<Double> result = new ArrayList<>(left.size() + right.size());
+        int leftIndex = 0, rightIndex = 0;
+
+        while (leftIndex < left.size() && rightIndex < right.size()) {
+            if (left.get(leftIndex) <= right.get(rightIndex)) {
+                result.add(left.get(leftIndex++));
+            } else {
+                result.add(right.get(rightIndex++));
+            }
+        }
+
+        result.addAll(left.subList(leftIndex, left.size()));
+        result.addAll(right.subList(rightIndex, right.size()));
+
+        return result;
     }
 
 }
