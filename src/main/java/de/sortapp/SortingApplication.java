@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SortappApplication {
+public class SortingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SortappApplication.class, args);
+		SpringApplication.run(SortingApplication.class, args);
 	}
 
 }
