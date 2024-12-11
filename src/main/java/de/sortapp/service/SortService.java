@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SortService {
-    //TODO: implement 3 sorting algorithms (bubble sort, quicksort, merge sort)
 
     public List<Double> bubbleSort(List<Double> input) {
         int n = input.size();
@@ -57,4 +56,42 @@ public class SortService {
         return result;
     }
 
+    public List<Double> quickSort(List<Double> input) {
+        if (input.size() <= 1) {
+            return input;
+        }
+        
+        return quickSortRecursive(input, 0, input.size() - 1);
+    }
+
+    private List<Double> quickSortRecursive(List<Double> input, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(input, low, high);
+            quickSortRecursive(input, low, pivotIndex - 1);
+            quickSortRecursive(input, pivotIndex + 1, high);
+        }
+        return input;
+    }
+
+    private int partition(List<Double> input, int low, int high) {
+        Double pivot = input.get(high);
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (input.get(j) <= pivot) {
+                i++;
+                // Tausche Elemente
+                Double temp = input.get(i);
+                input.set(i, input.get(j));
+                input.set(j, temp);
+            }
+        }
+
+        // Setze Pivot an die richtige Position
+        Double temp = input.get(i + 1);
+        input.set(i + 1, input.get(high));
+        input.set(high, temp);
+
+        return i + 1;
+    }
 }
