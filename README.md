@@ -1,4 +1,4 @@
-# SortingAppp
+# SortingApp
 
 A Web Service made with Spring Boot for Sorting Arbitrary Long Lists of Floating-point Numbers.
 
