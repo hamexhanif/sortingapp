@@ -87,3 +87,11 @@ Configuration settings are located in `application.properties`:
 ```bash
 mvn test
 ```
+
+## Debug Mode
+
+Enable debug mode to view the duration and a detailed breakdown of the sorting process. To do so, uncomment the `# spring.profiles.active=debug` line in the `application.properties` file or start the application with the following command:
+
+```bash
+mvn spring-boot:run -Dspring.profiles.active=debug
+```
