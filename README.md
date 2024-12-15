@@ -9,8 +9,8 @@ Three different sorting algorithms are available:
 
 ## Prerequisite
 
-- Java 17 or higher
-- Maven
+- Java 21 or higher
+- Maven 3.9.8
 
 ## Building the Project
 
