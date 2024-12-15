@@ -81,6 +81,7 @@ curl -k -X POST https://localhost:8100/api/sort/mergesort -H "Content-Type: appl
 Configuration settings are located in `application.properties`:
 - Port: 8100
 - HTTPS Configuration
+- Logging Configuration
 
 ## Running Tests
 
