@@ -34,6 +34,8 @@ keytool -genkey -alias sortingapp_cert -keyalg RSA -keystore certificate.p12 -st
 ```
 When prompted, enter a password and confirm the certificate details. The one used in the exsiting repository is `thisisthepassword`, configurable in `application.properties`
 
+After the certificate `certificate.p12` generated, put it in the `src/main/resources` directory.
+
 ## Starting the Application
 
 ```bash
