@@ -48,3 +48,9 @@ jobs:
         run: |
           kubectl set image deployment/sortingapp-deployment sortingapp=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/sortingapp:latest
           kubectl rollout status deployment/sortingapp-deployment
+
+      - name: Restart Kubernetes Deployment
+        run: |
+          kubectl rollout restart deployment/sortingapp-deployment
+          kubectl rollout status deployment/sortingapp-deployment
+          
