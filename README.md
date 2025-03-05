@@ -17,7 +17,7 @@ Three different sorting algorithms are available:
 1. Clone the repository
 ```bash
 git clone https://github.com/hamexhanif/sortingapp.git
-cd sort-service
+cd sortingapp
 ```
 
 2. Compile the project
